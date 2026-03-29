@@ -205,3 +205,81 @@ body {
     z-index: -1;
     opacity: 0.3;
 }
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Certificate Container */
+.certificate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Border Box */
+.border {
+    background: white;
+    padding: 40px;
+    width: 700px;
+    text-align: center;
+    border: 10px solid #2a5298;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Title */
+.title {
+    font-size: 40px;
+    color: #2a5298;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Name */
+.name {
+    font-size: 32px;
+    margin: 15px 0;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Course */
+.course {
+    font-size: 26px;
+    color: #1e3c72;
+    margin: 10px 0;
+}
+
+/* Content */
+.content {
+    font-size: 18px;
+    color: #444;
+}
+
+/* Date & Code */
+.date, .code {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Signature */
+.signature {
+    margin-top: 40px;
+    text-align: right;
+    font-size: 16px;
+    color: #000;
+    border-top: 1px solid #000;
+    width: 200px;
+    margin-left: auto;
+    padding-top: 5px;
+}
