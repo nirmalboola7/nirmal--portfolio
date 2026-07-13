@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nirmal Raj Boola | Cloud Developer</title>
+<title>NIRMAL RAJU BOOLA | Cloud Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
@@ -272,6 +272,26 @@ body {
   margin: 14px auto 0;
   border-radius: 2px;
 }
+.section-subtitle {
+  text-align: center;
+  color: #475569;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: -40px;
+  margin-bottom: 50px;
+}
+.cert-intro {
+  max-width: 700px;
+  margin: 0 auto 55px;
+  text-align: center;
+  color: #94a3b8;
+  line-height: 1.9;
+  font-size: 15px;
+  position: relative;
+  z-index: 1;
+}
 
 /* SKILLS */
 .skills-section {
@@ -531,21 +551,41 @@ body {
 
 /* CERTIFICATIONS */
 .certification-section {
-  padding: 90px 20px;
+  padding: 90px 20px 110px;
   background: #0d1424;
   position: relative;
   z-index: 1;
+  overflow: hidden;
+}
+.certification-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(56,189,248,0.08), transparent 70%);
+  pointer-events: none;
+}
+.certification-section::after {
+  content: '';
+  position: absolute;
+  bottom: -120px; left: -120px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(52,211,153,0.06), transparent 70%);
+  pointer-events: none;
 }
 .certification-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+  position: relative;
+  z-index: 1;
 }
 .certificate-link { text-decoration: none; display: block; width: 340px; }
+
 .certificate-card {
   background: #111827;
-  padding: 30px;
+  padding: 32px 30px;
   border-radius: 18px;
   border: 1.5px solid #1e3a5f;
   transition: 0.45s;
@@ -574,13 +614,23 @@ body {
 .certificate-card h3 {
   color: #38bdf8;
   font-size: 22px;
-  margin-bottom: 14px;
+  margin-bottom: 6px;
   font-family: 'Space Mono', monospace;
+}
+.certificate-issuer {
+  display: block;
+  color: #64748b;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 14px;
 }
 .certificate-card p {
   color: #94a3b8;
   line-height: 1.8;
   margin-bottom: 20px;
+  min-height: 78px;
 }
 .certificate-date {
   display: inline-block;
@@ -592,6 +642,69 @@ body {
   border: 1px solid rgba(52,211,153,0.3);
   font-family: 'Space Mono', monospace;
 }
+.certificate-view {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #38bdf8;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 1px;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.certificate-view svg { transition: transform 0.3s; }
+.certificate-link:hover .certificate-view svg { transform: translateX(4px); }
+
+/* FEATURED / ELITE CERTIFICATE STYLING */
+.certificate-card.featured {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(#111827, #111827) padding-box,
+    linear-gradient(135deg, #38bdf8, #818cf8, #34d399, #38bdf8) border-box;
+  background-size: 100% 100%, 300% 300%;
+  animation: borderFlow 6s ease infinite;
+}
+@keyframes borderFlow {
+  0%   { background-position: 0% 0%, 0% 50%; }
+  50%  { background-position: 0% 0%, 100% 50%; }
+  100% { background-position: 0% 0%, 0% 50%; }
+}
+.certificate-card.featured:hover {
+  transform: translateY(-14px) scale(1.035);
+  box-shadow: 0 0 45px rgba(56,189,248,0.55);
+}
+.cert-ribbon {
+  position: absolute;
+  top: 16px;
+  right: -34px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  color: #0a0f1e;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 5px 40px;
+  transform: rotate(40deg);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+.certificate-score {
+  display: inline-flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.certificate-score span {
+  background: #0d1424;
+  border: 1px solid #1e293b;
+  color: #94a3b8;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+.certificate-score span b { color: #38bdf8; }
 
 /* STATS */
 .stats-section {
@@ -734,7 +847,7 @@ footer {
       <div class="stat-label">Projects Built</div>
     </div>
     <div class="stat-item reveal">
-      <span class="stat-num" data-target="3">0</span>
+      <span class="stat-num" data-target="5">0</span>
       <div class="stat-label">Certifications</div>
     </div>
     <div class="stat-item reveal">
@@ -855,23 +968,84 @@ useEffect(() => {
 <!-- ===== CERTIFICATIONS ===== -->
 <section class="certification-section" id="certs">
   <h2 class="section-title typed-title reveal">Certifications</h2>
+  <p class="section-subtitle reveal">5 credentials · verified issuers</p>
+
+  <p class="cert-intro reveal">
+    I believe in continuously validating what I learn. Alongside my coursework, I actively pursue
+    industry-recognized certifications to build a strong foundation in cloud computing, databases
+    and core programming — steadily working toward my goal of becoming a certified Cloud Engineer.
+    From AWS's official training tracks to IIT Kharagpur's NPTEL program, each credential below
+    reflects hands-on learning backed by proctored assessments.
+  </p>
+
   <div class="certification-container">
 
-    <a class="certificate-link reveal-left" href="AWS CERTIFICATE.pdf" target="_blank">
-      <div class="certificate-card">
-        <span class="certificate-icon">☁️</span>
-        <h3>AWS Networking Basics</h3>
-        <p>Successfully completed AWS Networking Basics certification.</p>
-        <span class="certificate-date">Completed: February 28, 2026</span>
+    <!-- NPTEL Cloud Computing (Elite) -->
+    <a class="certificate-link reveal-left" href="NPTEL Cloud Computing Elite Certificate.pdf" target="_blank">
+      <div class="certificate-card featured">
+        <div class="cert-ribbon">ELITE</div>
+        <span class="certificate-icon">🎓</span>
+        <h3>Cloud Computing</h3>
+        <span class="certificate-issuer">NPTEL · IIT Kharagpur</span>
+        <div class="certificate-score">
+          <span>Score: <b>61%</b></span>
+          <span>Type: <b>12-week</b></span>
+        </div>
+        <p>Elite certification covering cloud service models, virtualization, distributed systems and cloud security fundamentals.</p>
+        <span class="certificate-date">Jan – Apr 2026</span>
+        <div class="certificate-view">
+          VIEW CERTIFICATE
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
       </div>
     </a>
 
-    <a class="certificate-link reveal" href="SQL CERTFICATE.pdf" target="_blank">
+    <!-- AWS Cloud Practitioner Essentials -->
+    <a class="certificate-link reveal" href="AWS Cloud Practitioner Essentials.pdf" target="_blank">
+      <div class="certificate-card featured">
+        <div class="cert-ribbon">AWS</div>
+        <span class="certificate-icon">☁️</span>
+        <h3>AWS Cloud Practitioner Essentials</h3>
+        <span class="certificate-issuer">AWS Training &amp; Certification</span>
+        <div class="certificate-score">
+          <span>EC2 &amp; S3</span>
+          <span>IAM</span>
+          <span>Pricing</span>
+        </div>
+        <p>Foundational course covering core AWS services, cloud architecture principles, security, pricing and support models.</p>
+        <span class="certificate-date">Completed: June 02, 2026</span>
+        <div class="certificate-view">
+          VIEW CERTIFICATE
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <a class="certificate-link reveal-right" href="AWS CERTIFICATE.pdf" target="_blank">
+      <div class="certificate-card">
+        <span class="certificate-icon">☁️</span>
+        <h3>AWS Networking Basics</h3>
+        <span class="certificate-issuer">AWS Training &amp; Certification</span>
+        <p>Successfully completed AWS Networking Basics certification.</p>
+        <span class="certificate-date">Completed: February 28, 2026</span>
+        <div class="certificate-view">
+          VIEW CERTIFICATE
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <a class="certificate-link reveal-left" href="SQL CERTFICATE.pdf" target="_blank">
       <div class="certificate-card">
         <span class="certificate-icon">🗄️</span>
         <h3>Introduction to SQL</h3>
+        <span class="certificate-issuer">Course Certificate</span>
         <p>Successfully completed Introduction to SQL certification.</p>
         <span class="certificate-date">Completed: February 21, 2026</span>
+        <div class="certificate-view">
+          VIEW CERTIFICATE
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
       </div>
     </a>
 
@@ -879,8 +1053,13 @@ useEffect(() => {
       <div class="certificate-card">
         <span class="certificate-icon">💻</span>
         <h3>C Skill Up</h3>
+        <span class="certificate-issuer">Course Certificate</span>
         <p>Successfully completed C Skill Up certification and gained strong knowledge in C programming fundamentals.</p>
         <span class="certificate-date">Completed: 2026</span>
+        <div class="certificate-view">
+          VIEW CERTIFICATE
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </div>
       </div>
     </a>
 
